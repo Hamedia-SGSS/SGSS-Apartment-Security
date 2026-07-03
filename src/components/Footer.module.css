@@ -1,73 +1,74 @@
 .footer {
   background: var(--color-dark);
-  padding: 40px 0;
+  padding: 60px 0 30px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .footerInner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  text-align: center;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 40px;
+  align-items: start;
 }
 
 .footerBrand {
   display: flex;
-  align-items: center;
-  gap: 12px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  text-align: left;
 }
 
-.footerBrandName {
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--color-white);
+.logoImg {
+  border-radius: 8px;
+  object-fit: contain;
 }
 
-.footerBrandTag {
-  font-size: 11px;
-  color: rgba(255, 255, 255, 0.4);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-top: 2px;
+.brandDesc {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
+  max-width: 280px;
+  margin: 0;
 }
 
-.footerCopy {
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.4);
-}
-
-.footerLinksContainer {
+.footerLinksCol {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  width: 100%;
+  align-items: flex-start;
+  text-align: left;
 }
 
-.footerLinksRow {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  column-gap: 16px;
-  row-gap: 8px;
-}
-
-.separator {
-  color: var(--color-gold);
+.footerHeader {
   font-size: 13px;
-  pointer-events: none;
+  font-weight: 800;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 16px;
+  margin-top: 0;
+  line-height: 1.2;
 }
 
+.headerSpacer {
+  height: 32px; /* matches font-size * line-height + margin-bottom of footerHeader */
+  display: block;
+}
 
+.footerLinkList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
 
 .footerLink {
   text-decoration: none;
   font-size: 13px;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.6);
   transition: color var(--transition);
 }
 
@@ -75,9 +76,66 @@
   color: var(--color-gold);
 }
 
-.logoImg {
-  border-radius: 8px;
-  object-fit: contain;
-  height: 80px;
-  width: auto;
+.footerCopyContainer {
+  grid-column: 1 / span 4;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 24px;
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.footerCopy {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0;
+}
+
+/* ---- RESPONSIVE BREAKPOINTS ---- */
+@media (max-width: 992px) {
+  .footerInner {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 30px;
+  }
+
+  .footerCopyContainer {
+    grid-column: 1 / span 2;
+  }
+
+  /* Since the layout wraps to 2 columns on tablet, hide header spacers to keep vertical stacking clean */
+  .headerSpacer {
+    display: none;
+  }
+  
+  /* Add small top margins to wrapped columns */
+  .footerLinksCol:nth-child(3),
+  .footerLinksCol:nth-child(4) {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footerInner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    text-align: center;
+  }
+
+  .footerBrand,
+  .footerLinksCol {
+    align-items: center;
+    text-align: center;
+  }
+
+  .brandDesc {
+    max-width: 100%;
+  }
+
+  .footerCopyContainer {
+    grid-column: 1;
+  }
+
+  .footerLinksCol {
+    margin-top: 0 !important;
+  }
 }
