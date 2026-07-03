@@ -1,0 +1,80 @@
+.ctaSection {
+  background: #1d2c48;
+  color: white;
+  padding: 6rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.ctaSection::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -10%;
+  width: 50%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(254, 207, 49, 0.1) 0%, transparent 70%);
+  transform: rotate(30deg);
+  pointer-events: none;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.heading {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 2.5rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+.buttonGroup {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+@media (max-width: 600px) {
+  .buttonGroup {
+    flex-direction: column;
+  }
+  .heading {
+    font-size: 2rem;
+  }
+}
+.primaryButton {
+  background: #fecf31;
+  color: #1d2c48;
+  padding: 1.25rem 3rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: 1.125rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(254, 207, 49, 0.3);
+}
+.primaryButton:hover {
+  background: #ffd644;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(254, 207, 49, 0.5);
+}
+.secondaryButton {
+  background: transparent;
+  color: white;
+  padding: 1.25rem 3rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: 1.125rem;
+  text-decoration: none;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+.secondaryButton:hover {
+  background: white;
+  color: #1d2c48;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+}

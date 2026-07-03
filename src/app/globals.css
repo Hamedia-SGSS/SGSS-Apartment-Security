@@ -1,0 +1,320 @@
+/* ==========================================
+   SGSS Armed Guard — Global Styles
+   Color Palette:
+     Gold:       #fecf31
+     Dark Blue:  #1d2c48
+     Gray:       #929292
+     Dark:       #2a2829
+     White:      #ffffff
+   ========================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-gold: #fecf31;
+  --color-gold-hover: #e8bb1e;
+  --color-dark-blue: #1d2c48;
+  --color-dark-blue-light: #263659;
+  --color-gray: #929292;
+  --color-gray-light: #c4c4c4;
+  --color-dark: #2a2829;
+  --color-white: #ffffff;
+  --color-bg: #ffffff;
+  --color-bg-section: #f8f9fc;
+
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+
+  --shadow-sm: 0 1px 3px rgba(29, 44, 72, 0.08);
+  --shadow-md: 0 4px 16px rgba(29, 44, 72, 0.1);
+  --shadow-lg: 0 10px 40px rgba(29, 44, 72, 0.12);
+  --shadow-xl: 0 24px 60px rgba(29, 44, 72, 0.15);
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 32px;
+
+  --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-dark);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+
+/* Utility */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-dark-blue);
+  border-radius: 3px;
+}
+
+@media print {
+  /* 1. Global Reset & Hide Browser Headers/Footers */
+  html, body {
+    background-color: #ffffff !important;
+    color: #2a2829 !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Remove localhost:3000 URL and page titles from print boundaries */
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  /* Hide interactive, non-document elements */
+  #navbar,
+  .backToTop,
+  button,
+  a[class*="navCta"],
+  div[class*="scrollIndicator"],
+  [class*="printBtn"],
+  [class*="heroScroll"],
+  [class*="progressWrap"] {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+  }
+
+  /* Disable animations and transitions for instant static rendering */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  /* 2. Slide Presentation Format (1 Section = 1 Page) 
+     Using ends-with ($=) selectors to match Next.js hashed parent class names
+     without bleeding styles to nested child elements. */
+  [class$="__hero"],
+  [class$="__addonSection"],
+  [class$="__opsSection"],
+  [class$="__valueSection"],
+  [class$="__industrySection"],
+  [class$="__whySection"],
+  [class$="__addonSectionAlt"],
+  [class$="__gallerySection"],
+  [class$="__bestFitSection"],
+  
+  [class*="_hero__"],
+  [class*="_whySection__"],
+  [class*="_addonSection__"],
+  [class*="_addonSectionAlt__"],
+  [class*="_opsSection__"],
+  [class*="_valueSection__"],
+  [class*="_industrySection__"],
+  [class*="_gallerySection__"],
+  [class*="_bestFitSection__"] {
+    page-break-after: always !important;
+    break-after: page !important;
+    min-height: 297mm !important; /* Full A4 page height */
+    height: auto !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 20mm !important;
+    position: relative !important;
+    overflow: hidden !important;
+    background-attachment: scroll !important;
+  }
+
+  /* 3. Single-Column Centered Layout Restructuring */
+  [class*="__grid"],
+  [class*="__columns"],
+  [class*="_grid__"],
+  [class*="_columns__"],
+  [class*="Grid__"],
+  [class*="Columns__"] {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 15px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Force cards in Section 2 (Real-Life Problem) to render as 2 columns to fit one page */
+  [class*="_whyCards__"],
+  [class*="whyCards__"],
+  [class$="__whyCards"] {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 15px !important;
+    width: 100% !important;
+    margin-top: 15px !important;
+  }
+
+  [class*="_whyCard__"],
+  [class*="whyCard__"],
+  [class$="__whyCard"] {
+    padding: 15px !important;
+    gap: 8px !important;
+  }
+
+
+  [class*="__content"],
+  [class*="_content__"],
+  [class*="Content__"] {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  [class*="__content"] p,
+  [class*="_content__"] p,
+  [class*="Content__"] p {
+    text-align: center !important;
+  }
+
+  [class*="__content"] ul,
+  [class*="_content__"] ul,
+  [class*="Content__"] ul {
+    display: inline-flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    margin: 10px auto 0 !important;
+    text-align: left !important;
+  }
+
+  /* 4. Center and Scale Image Containers */
+  [class*="__imageCol"],
+  [class*="_imageCol__"],
+  [class*="ImageCol__"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-top: 10px !important;
+  }
+
+  /* Photo framing adjustments (applied ONLY to <img> via ends-with selector) */
+  [class$="__addonImage"],
+  [class*="_addonImage__"],
+  [class*="addonImage__"] {
+    border: 3px solid #fecf31 !important; /* Brand Gold */
+    box-shadow: 0 12px 40px rgba(29, 44, 72, 0.2) !important;
+    padding: 4px !important;
+    background: #ffffff !important;
+    border-radius: 12px !important;
+    width: 100% !important;
+    max-width: 440px !important;
+    height: auto !important;
+    max-height: 95mm !important; /* Cap to prevent vertical overflow */
+    object-fit: cover !important;
+  }
+
+  /* 5. Center Lists & Gallery grids (like 5 items split into 3 and 2) */
+  [class*="__galleryMarqueeTrack"],
+  [class*="_galleryMarqueeTrack__"],
+  [class*="galleryMarqueeTrack__"] {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 15px !important;
+    width: 100% !important;
+  }
+
+  [class*="__galleryCard"],
+  [class*="_galleryCard__"],
+  [class*="galleryCard__"] {
+    flex: 0 1 calc(33.33% - 15px) !important;
+    max-width: 52mm !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
+  }
+
+  [class*="__galleryImgWrapper"],
+  [class*="_galleryImgWrapper__"],
+  [class*="galleryImgWrapper__"] {
+    width: 100% !important;
+    aspect-ratio: 4 / 3 !important;
+    overflow: hidden !important;
+    border-radius: 12px !important;
+  }
+
+  [class*="__galleryMarqueeTrack"] [aria-hidden="true"],
+  [class*="_galleryMarqueeTrack__"] [aria-hidden="true"],
+  [class*="galleryMarqueeTrack__"] [aria-hidden="true"] {
+    display: none !important;
+  }
+
+  /* 6. Last Page Combination: PreFooter CTA + Footer */
+  [class$="__prefooterSection"],
+  [class$="__ctaSection"],
+  [class*="_ctaSection__"],
+  [class*="ctaSection__"] {
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+    min-height: 180mm !important;
+    height: auto !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    padding: 15mm 20mm !important;
+    border: 6px double rgba(254, 207, 49, 0.3) !important;
+    margin: 5mm 10mm !important;
+    border-radius: 20px !important;
+  }
+
+  [class$="__footer"],
+  [class$="__footerSection"],
+  [class*="_footer__"],
+  [class*="footer__"] {
+    min-height: 102mm !important; /* Occupies the remaining space to page bottom */
+    height: auto !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    padding: 15mm 10mm !important;
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+    background-color: #1d2c48 !important; /* Brand Dark Blue */
+  }
+}
+
