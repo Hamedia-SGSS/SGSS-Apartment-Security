@@ -46,7 +46,7 @@ export default function ApartmentSecurityPage() {
       <section className={styles.hero} id="hero">
         <div className={styles.heroBg}>
           <Image
-            src="/apartment_security_hero.png"
+            src="https://assets.cdn.filesafe.space/ApWkZ2IFXdvkS2AT3Tqg/media/6a4e7c87ac2f159bb069e4ad.webp"
             alt="Secure Guard officer standing in front of apartment complex at twilight"
             fill
             className={styles.heroBgImg}
@@ -138,12 +138,13 @@ export default function ApartmentSecurityPage() {
           <div className={styles.addonGrid}>
             <div className={styles.addonImageCol}>
               <Image 
-                src="/apartment_patrol_solution.png" 
+                src="https://assets.cdn.filesafe.space/ApWkZ2IFXdvkS2AT3Tqg/media/6a4e7c87eada8c1f4560def4.webp" 
                 alt="Secure Guard officer patrolling residential building courtyard" 
                 width={600} 
                 height={500} 
                 className={styles.addonImage} 
                 style={{ objectFit: 'cover' }}
+                unoptimized
               />
             </div>
             <div className={styles.addonContent}>

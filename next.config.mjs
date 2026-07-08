@@ -8,6 +8,13 @@ const __dirname = path.dirname(__filename);
 const nextConfig = {
   images: {
     qualities: [75, 90, 100],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'assets.cdn.filesafe.space',
+        pathname: '/**',
+      },
+    ],
   },
   turbopack: {
     root: __dirname,
