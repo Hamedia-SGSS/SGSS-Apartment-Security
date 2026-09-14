@@ -46,8 +46,8 @@ export default function ApartmentSecurityPage() {
       <section className={styles.hero} id="hero">
         <div className={styles.heroBg}>
           <Image
-            src="https://assets.cdn.filesafe.space/ApWkZ2IFXdvkS2AT3Tqg/media/6a4e7c87ac2f159bb069e4ad.webp"
-            alt="Secure Guard officer standing in front of apartment complex at twilight"
+            src="https://cms.secureguardservices.com/wp-content/uploads/2026/09/apart.png"
+            alt="Secure Guard officer standing in front of apartment complex"
             fill
             className={styles.heroBgImg}
             priority

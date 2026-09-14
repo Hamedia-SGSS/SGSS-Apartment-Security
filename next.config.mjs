@@ -14,10 +14,12 @@ const nextConfig = {
         hostname: 'assets.cdn.filesafe.space',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'cms.secureguardservices.com',
+        pathname: '/**',
+      },
     ],
-  },
-  turbopack: {
-    root: __dirname,
   },
 };
 

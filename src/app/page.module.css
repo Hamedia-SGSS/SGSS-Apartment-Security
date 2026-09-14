@@ -11,11 +11,13 @@
 /* ---- HERO ---- */
 .hero {
   position: relative;
-  min-height: 90vh;
+  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   padding-top: 110px;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .heroBg {
@@ -26,13 +28,19 @@
 
 .heroBgImg {
   object-fit: cover;
-  object-position: center 30%;
+  object-position: center top;
 }
 
 .heroOverlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, rgba(29, 44, 72, 0.95) 0%, rgba(29, 44, 72, 0.85) 45%, rgba(29, 44, 72, 0.3) 80%, rgba(29, 44, 72, 0.1) 100%);
+  background: linear-gradient(
+    to right,
+    rgba(29, 44, 72, 0.82) 0%,
+    rgba(29, 44, 72, 0.65) 45%,
+    rgba(29, 44, 72, 0.2) 80%,
+    rgba(29, 44, 72, 0.05) 100%
+  );
 }
 
 .heroWrapper {
@@ -46,8 +54,8 @@
 .heroContent {
   width: 100%;
   max-width: 800px;
-  padding-top: 80px;
-  padding-bottom: 100px;
+  padding-top: 40px;
+  padding-bottom: 60px;
   animation: heroFadeIn 0.85s ease both;
   display: flex;
   flex-direction: column;
