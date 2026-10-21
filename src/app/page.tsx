@@ -6,16 +6,16 @@ import { PreFooterCTA } from "@/components/PreFooterCTA";
 
 // Reusable icons for situations and fits
 const situations = [
-  { icon: "🚗", title: "Vehicle Break-ins", desc: "Patrolling garages and open lots to prevent break-ins and vehicle vandalism." },
-  { icon: "📦", title: "Package Theft", desc: "Monitoring lobby deliveries and package lockers to prevent porch piracy." },
-  { icon: "👤", title: "Unauthorized Guests", desc: "Checking credentials and managing entry to stop unauthorized access." },
-  { icon: "🔊", title: "Noise Complaints", desc: "Addressing after-hours disturbance complaints professionally to maintain quiet hours." },
-  { icon: "🏊", title: "Pool & Amenity Misuse", desc: "Monitoring common amenities to prevent after-hours trespass and property damage." },
-  { icon: "🚪", title: "Loitering near Entrances", desc: "Keeping doorways, lobbies, and common walkways clear and safe for residents." },
-  { icon: "⛺", title: "Homeless Activity", desc: "De-escalating trespassing, loitering, and encampments near property boundaries." },
-  { icon: "⛔", title: "Parking Violations", desc: "Conducting parking enforcement, fire lane clearance, and towing coordination." },
-  { icon: "🚧", title: "Gate Access Problems", desc: "Assisting residents and guests with malfunctioning vehicle gates or access key issues." },
-  { icon: "🤝", title: "Resident Disputes", desc: "Mediating community conflicts peacefully without unnecessary escalation." },
+  { icon: "🚗", title: "Vehicle Break-ins", desc: "Patrol garages and monitor designated delivery areas to help deter theft and promptly report suspicious activity." },
+  { icon: "📦", title: "Package Theft", desc: "Patrol garages and monitor designated delivery areas to help deter theft and promptly report suspicious activity." },
+  { icon: "👤", title: "Unauthorized Guests", desc: "Check visitor authorization where the property has approved access-control policies and resident privacy requirements." },
+  { icon: "🔊", title: "Noise Complaints", desc: "Addressing after-hours disturbance complaints professionally and reporting to property management to support quiet hours." },
+  { icon: "🏊", title: "Pool & Amenity Misuse", desc: "Monitoring common amenities to help deter after-hours trespass and report property damage." },
+  { icon: "🚪", title: "Loitering near Entrances", desc: "Monitoring doorways, lobbies, and common walkways to support clear and orderly resident access." },
+  { icon: "⛺", title: "Unauthorized Entry & Boundary Concerns", desc: "Addressing unauthorized entry, loitering, and boundary concerns in accordance with property policies and applicable law." },
+  { icon: "⛔", title: "Parking Violations", desc: "Document parking violations and coordinate authorized towing under property policies and applicable local requirements." },
+  { icon: "🚧", title: "Gate Access Problems", desc: "Assisting residents and guests with malfunctioning vehicle gates or access issues per property post orders." },
+  { icon: "🤝", title: "Resident Disputes", desc: "Use verbal de-escalation and notify property management or emergency services as appropriate; officers support rather than replace property management." },
 ];
 
 const properties = [
@@ -30,10 +30,10 @@ const properties = [
 ];
 
 const coverageOptions = [
-  { service: "Overnight Patrols", schedule: "Custom Hours", desc: "Dedicated physical patrols during peak vulnerability periods (typically 10 PM - 6 AM)." },
-  { service: "Weekend Amenity Checks", schedule: "Fri - Sun Focus", desc: "Increased monitoring of pools, gyms, clubhouse facilities, and shared areas." },
-  { service: "High-Complaint Target Coverage", schedule: "Flexible Shift", desc: "Targeted deployment focused on specific areas with ongoing issues or resident concerns." },
-  { service: "Move-in / Peak Periods", schedule: "Seasonal / Occasional", desc: "Extra support during major moving weekends, property transitions, or community events." },
+  { service: "Overnight Patrols", schedule: "Sample: 10 PM - 6 AM", desc: "Scheduled physical patrols during overnight hours (sample schedule; actual hours and staffing are determined by the client's service agreement)." },
+  { service: "Weekend Amenity Checks", schedule: "Sample: Fri - Sun", desc: "Scheduled monitoring of pools, gyms, clubhouse facilities, and shared areas per the property agreement." },
+  { service: "High-Complaint Target Coverage", schedule: "Custom / By Agreement", desc: "Targeted deployment focused on specific areas with ongoing issues or resident concerns." },
+  { service: "Move-in / Peak Periods", schedule: "Seasonal / Contracted", desc: "Separately scheduled support during major moving weekends, property transitions, or community events." },
 ];
 
 export default function ApartmentSecurityPage() {
@@ -65,7 +65,7 @@ export default function ApartmentSecurityPage() {
               Protect Residents, Property, Parking Areas, <span className={styles.heroTitleAccent}>and Daily Community Operations</span>
             </h1>
             <p className={styles.heroSubtitle}>
-              Secure Guard Security Services delivers responsive, de-escalation-focused protection for residential communities. Protect your tenants, secure your parking structures, and ensure smooth after-hours operations.
+              Secure Guard Security Services delivers responsive, de-escalation-focused security services for residential communities. Help protect residents and property through visible patrols, access control, and timely incident reporting.
             </p>
             <div className={styles.heroCtas}>
               <a 
@@ -112,10 +112,10 @@ export default function ApartmentSecurityPage() {
             </div>
             <div className={styles.whyCards}>
               {[
-                { icon: "🚗", title: "Vehicle Break-ins", desc: "Vulnerable parking garages and open carports are targets for break-ins and theft." },
-                { icon: "📦", title: "Lobby Package Theft", desc: "Unsecured lobbies and doorsteps attract opportunistic porch pirates." },
+                { icon: "🚗", title: "Vehicle Break-ins", desc: "Patrol garages and monitor designated delivery areas to help deter theft and promptly report suspicious activity." },
+                { icon: "📦", title: "Lobby Package Theft", desc: "Patrol garages and monitor designated delivery areas to help deter theft and promptly report suspicious activity." },
                 { icon: "🚶", title: "Trespassing & Loitering", desc: "Non-residents gathering in stairwells, laundry rooms, or recreation zones." },
-                { icon: "🗣️", title: "Resident Disputes", desc: "Noise complaints, parking violations, and conflicts requiring diplomatic de-escalation." },
+                { icon: "🗣️", title: "Resident Disputes", desc: "Use verbal de-escalation and notify property management or emergency services as appropriate; officers support rather than replace property management." },
               ].map((c) => (
                 <div key={c.title} className={styles.whyCard}>
                   <div className={styles.whyCardIconWrapper}>
@@ -153,10 +153,10 @@ export default function ApartmentSecurityPage() {
                 Visible Patrols & <span className={styles.titleAccent}>Professional Community Presence</span>
               </h2>
               <p className={styles.bodyText}>
-                Secure Guard provides apartment security officers, patrol services, gate monitoring, parking lot checks, amenity area monitoring, resident assistance, incident reporting, and after-hours support.
+                Secure Guard provides apartment security officers, patrol services, gate monitoring, parking lot checks, amenity area monitoring, resident assistance, incident reporting, and after-hours support—with standing guards, mobile patrols, and specialized duties defined in your service agreement.
               </p>
               <p className={styles.bodyText}>
-                Our officers are trained to de-escalate situations professionally. We provide de-escalation-focused patrols and support to property managers and leasing staff, managing resident disputes and neighborhood complaints peacefully.
+                Our officers are trained in verbal de-escalation and follow property post orders to support property managers and leasing staff by observing, documenting, and escalating community issues appropriately.
               </p>
             </div>
           </div>
@@ -173,7 +173,7 @@ export default function ApartmentSecurityPage() {
             </h2>
           </div>
           <p className={styles.bodyTextCenteredLight}>
-            Security coverage can be customized for overnight hours, weekends, high-complaint areas, move-in periods, or properties dealing with ongoing trespassing or safety concerns. We design a plan that fits your community’s specific schedule and layout.
+            Sample schedules are shown below. Security coverage hours, patrol frequency, and staffing levels are customized and determined by your property&apos;s service agreement.
           </p>
 
           {/* Coverage Options Table */}
@@ -212,7 +212,7 @@ export default function ApartmentSecurityPage() {
                 What This Means <span className={styles.titleAccentGold}>for the Client</span>
               </h2>
               <p className={styles.bodyTextLight}>
-                By deploying Secure Guard, you establish a reliable security presence that supports both property managers and leasing staff, reduces property damage, and ensures residents feel safe and supported.
+                By deploying Secure Guard, you establish a reliable security presence that supports both property managers and leasing staff, helps deter property damage, and supports a visible security presence and helps residents feel informed and supported.
               </p>
             </div>
             <div className={styles.opsFeatures}>

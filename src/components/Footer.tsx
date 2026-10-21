@@ -16,10 +16,10 @@ const industriesCol1 = [
 
 const industriesCol2 = [
   { label: "Financial Institution", href: "https://sgss-financial-institution-security.vercel.app/" },
-  { label: "Government Facility", href: "https://sgss-government-facility-security-u.vercel.app/" },
+  { label: "Government Facility", href: "https://sgss-government-facility-security.vercel.app/" },
   { label: "Healthcare Facility", href: "https://sgss-healthcare-facility-security.vercel.app/" },
   { label: "High Rise", href: "https://sgss-high-rise-security.vercel.app/" },
-  { label: "Homeowners Association", href: "https://sgss-homeowners-association-securit.vercel.app/" },
+  { label: "Homeowners Association", href: "https://sgss-homeowners-association-security.vercel.app/" },
   { label: "Hotel", href: "https://sgss-hotel-security.vercel.app/" },
   { label: "Mall", href: "https://sgss-mall-security.vercel.app/" },
   { label: "Manufacturing Facility", href: "https://sgss-manufacturing-facility-securit.vercel.app/" },
