@@ -3,30 +3,31 @@ import styles from "./page.module.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { PreFooterCTA } from "@/components/PreFooterCTA";
+import { ShieldIcon, type ShieldGlyph } from "@/components/ShieldIcon";
 
 // Reusable icons for situations and fits
-const situations = [
-  { icon: "🚗", title: "Vehicle Break-ins", desc: "Patrol garages and monitor designated delivery areas to help deter theft and promptly report suspicious activity." },
-  { icon: "📦", title: "Package Theft", desc: "Patrol garages and monitor designated delivery areas to help deter theft and promptly report suspicious activity." },
-  { icon: "👤", title: "Unauthorized Guests", desc: "Check visitor authorization where the property has approved access-control policies and resident privacy requirements." },
-  { icon: "🔊", title: "Noise Complaints", desc: "Addressing after-hours disturbance complaints professionally and reporting to property management to support quiet hours." },
-  { icon: "🏊", title: "Pool & Amenity Misuse", desc: "Monitoring common amenities to help deter after-hours trespass and report property damage." },
-  { icon: "🚪", title: "Loitering near Entrances", desc: "Monitoring doorways, lobbies, and common walkways to support clear and orderly resident access." },
-  { icon: "⛺", title: "Unauthorized Entry & Boundary Concerns", desc: "Addressing unauthorized entry, loitering, and boundary concerns in accordance with property policies and applicable law." },
-  { icon: "⛔", title: "Parking Violations", desc: "Document parking violations and coordinate authorized towing under property policies and applicable local requirements." },
-  { icon: "🚧", title: "Gate Access Problems", desc: "Assisting residents and guests with malfunctioning vehicle gates or access issues per property post orders." },
-  { icon: "🤝", title: "Resident Disputes", desc: "Use verbal de-escalation and notify property management or emergency services as appropriate; officers support rather than replace property management." },
+const situations: { glyph: ShieldGlyph; title: string; desc: string }[] = [
+  { glyph: "car", title: "Vehicle Break-ins", desc: "Patrol garages and monitor designated delivery areas to help deter theft and promptly report suspicious activity." },
+  { glyph: "package", title: "Package Theft", desc: "Patrol garages and monitor designated delivery areas to help deter theft and promptly report suspicious activity." },
+  { glyph: "guest", title: "Unauthorized Guests", desc: "Check visitor authorization where the property has approved access-control policies and resident privacy requirements." },
+  { glyph: "noise", title: "Noise Complaints", desc: "Addressing after-hours disturbance complaints professionally and reporting to property management to support quiet hours." },
+  { glyph: "pool", title: "Pool & Amenity Misuse", desc: "Monitoring common amenities to help deter after-hours trespass and report property damage." },
+  { glyph: "door", title: "Loitering near Entrances", desc: "Monitoring doorways, lobbies, and common walkways to support clear and orderly resident access." },
+  { glyph: "boundary", title: "Unauthorized Entry & Boundary Concerns", desc: "Addressing unauthorized entry, loitering, and boundary concerns in accordance with property policies and applicable law." },
+  { glyph: "parking", title: "Parking Violations", desc: "Document parking violations and coordinate authorized towing under property policies and applicable local requirements." },
+  { glyph: "gate", title: "Gate Access Problems", desc: "Assisting residents and guests with malfunctioning vehicle gates or access issues per property post orders." },
+  { glyph: "dispute", title: "Resident Disputes", desc: "Use verbal de-escalation and notify property management or emergency services as appropriate; officers support rather than replace property management." },
 ];
 
-const properties = [
-  { icon: "🏘️", label: "Apartment Communities" },
-  { icon: "💎", label: "Luxury Apartments" },
-  { icon: "🏠", label: "Affordable Housing" },
-  { icon: "👵", label: "Senior Housing" },
-  { icon: "🏢", label: "Mixed-Use Residential" },
-  { icon: "⛩️", label: "Gated Communities" },
-  { icon: "🅿️", label: "Parking Garages" },
-  { icon: "🏢", label: "Multi-Building Properties" },
+const properties: { glyph: ShieldGlyph; label: string }[] = [
+  { glyph: "community", label: "Apartment Communities" },
+  { glyph: "luxury", label: "Luxury Apartments" },
+  { glyph: "housing", label: "Affordable Housing" },
+  { glyph: "senior", label: "Senior Housing" },
+  { glyph: "mixed", label: "Mixed-Use Residential" },
+  { glyph: "gated", label: "Gated Communities" },
+  { glyph: "garage", label: "Parking Garages" },
+  { glyph: "multibuilding", label: "Multi-Building Properties" },
 ];
 
 const coverageOptions = [
@@ -111,15 +112,17 @@ export default function ApartmentSecurityPage() {
               </p>
             </div>
             <div className={styles.whyCards}>
-              {[
-                { icon: "🚗", title: "Vehicle Break-ins", desc: "Patrol garages and monitor designated delivery areas to help deter theft and promptly report suspicious activity." },
-                { icon: "📦", title: "Lobby Package Theft", desc: "Patrol garages and monitor designated delivery areas to help deter theft and promptly report suspicious activity." },
-                { icon: "🚶", title: "Trespassing & Loitering", desc: "Non-residents gathering in stairwells, laundry rooms, or recreation zones." },
-                { icon: "🗣️", title: "Resident Disputes", desc: "Use verbal de-escalation and notify property management or emergency services as appropriate; officers support rather than replace property management." },
-              ].map((c) => (
+              {(
+                [
+                  { glyph: "car", title: "Vehicle Break-ins", desc: "Patrol garages and monitor designated delivery areas to help deter theft and promptly report suspicious activity." },
+                  { glyph: "package", title: "Lobby Package Theft", desc: "Patrol garages and monitor designated delivery areas to help deter theft and promptly report suspicious activity." },
+                  { glyph: "trespass", title: "Trespassing & Loitering", desc: "Non-residents gathering in stairwells, laundry rooms, or recreation zones." },
+                  { glyph: "dispute", title: "Resident Disputes", desc: "Use verbal de-escalation and notify property management or emergency services as appropriate; officers support rather than replace property management." },
+                ] as { glyph: ShieldGlyph; title: string; desc: string }[]
+              ).map((c) => (
                 <div key={c.title} className={styles.whyCard}>
                   <div className={styles.whyCardIconWrapper}>
-                    <span className={styles.whyCardIcon}>{c.icon}</span>
+                    <ShieldIcon glyph={c.glyph} variant="filled" size={38} />
                   </div>
                   <div className={styles.whyCardContent}>
                     <h3 className={styles.whyCardTitle}>{c.title}</h3>
@@ -226,7 +229,9 @@ export default function ApartmentSecurityPage() {
                 "Flexible coverage based on property needs",
               ].map((benefit, idx) => (
                 <div key={idx} className={styles.opsFeatureItem}>
-                  <span className={styles.opsFeatureIcon}>🛡️</span>
+                  <span className={styles.opsFeatureIcon}>
+                    <ShieldIcon glyph="check" variant="outline" size={22} />
+                  </span>
                   <span className={styles.opsFeatureLabel}>{benefit}</span>
                 </div>
               ))}
@@ -248,7 +253,9 @@ export default function ApartmentSecurityPage() {
             {situations.map((sit, index) => (
               <div key={index} className={styles.situationCard}>
                 <div className={styles.situationHeader}>
-                  <span className={styles.situationIcon}>{sit.icon}</span>
+                  <span className={styles.situationIcon}>
+                    <ShieldIcon glyph={sit.glyph} variant="filled" size={36} />
+                  </span>
                   <h3 className={styles.situationTitle}>{sit.title}</h3>
                 </div>
                 <p className={styles.situationDesc}>{sit.desc}</p>
@@ -273,7 +280,9 @@ export default function ApartmentSecurityPage() {
           <div className={styles.propertiesGrid}>
             {properties.map((prop, idx) => (
               <div key={idx} className={styles.propertyCard}>
-                <div className={styles.propertyIcon}>{prop.icon}</div>
+                <div className={styles.propertyIcon}>
+                  <ShieldIcon glyph={prop.glyph} variant="outline" size={42} />
+                </div>
                 <span className={styles.propertyLabel}>{prop.label}</span>
               </div>
             ))}

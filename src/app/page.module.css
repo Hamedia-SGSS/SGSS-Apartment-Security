@@ -353,13 +353,11 @@
 }
 
 .whyCardIconWrapper {
-  width: 48px;
-  height: 48px;
-  background: rgba(29, 44, 72, 0.04);
-  border-radius: var(--radius-sm);
+  width: 42px;
+  height: 44px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .whyCardIcon {
@@ -538,9 +536,9 @@
 
 .opsGrid {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
+  grid-template-columns: 0.9fr 1.35fr;
   gap: 56px;
-  align-items: start;
+  align-items: center;
 }
 
 .opsText {
@@ -551,19 +549,23 @@
 
 .opsFeatures {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 16px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
 }
 
 .opsFeatureItem {
   display: flex;
-  align-items: flex-start;
-  gap: 16px;
+  align-items: center;
+  gap: 14px;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.06);
-  padding: 18px 24px;
+  padding: 18px 20px;
   border-radius: var(--radius-md);
   transition: transform var(--transition), border-color var(--transition), background var(--transition);
+}
+
+.opsFeatureItem:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
 }
 
 .opsFeatureItem:hover {
@@ -573,7 +575,10 @@
 }
 
 .opsFeatureIcon {
-  font-size: 1.2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
   line-height: 1;
 }
 
@@ -619,7 +624,10 @@
 }
 
 .situationIcon {
-  font-size: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
   line-height: 1;
 }
 
@@ -671,7 +679,9 @@
 }
 
 .propertyIcon {
-  font-size: 2.2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   line-height: 1;
 }
 
@@ -721,7 +731,8 @@
     justify-content: center;
   }
 
-  .whyCards {
+  .whyCards,
+  .opsFeatures {
     grid-template-columns: 1fr;
   }
   
